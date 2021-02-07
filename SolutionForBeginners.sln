@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoList", "ToDoList\ToDoLi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuntTheWumpus", "HuntTheWumpus\HuntTheWumpus.csproj", "{B4417D7D-3369-453E-B84F-5BB86F385C8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoxingUnboxing", "BoxingUnboxing\BoxingUnboxing.csproj", "{483A7E17-12CF-43F7-A2F0-F3690B0DBBB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoxingUnboxing", "BoxingUnboxing\BoxingUnboxing.csproj", "{483A7E17-12CF-43F7-A2F0-F3690B0DBBB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyListImplementation", "MyListImplementation\MyListImplementation.csproj", "{C91F51FB-A39D-4E06-92B7-03A715BA2E97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{483A7E17-12CF-43F7-A2F0-F3690B0DBBB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{483A7E17-12CF-43F7-A2F0-F3690B0DBBB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{483A7E17-12CF-43F7-A2F0-F3690B0DBBB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C91F51FB-A39D-4E06-92B7-03A715BA2E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C91F51FB-A39D-4E06-92B7-03A715BA2E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C91F51FB-A39D-4E06-92B7-03A715BA2E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C91F51FB-A39D-4E06-92B7-03A715BA2E97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
