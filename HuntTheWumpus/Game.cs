@@ -23,7 +23,7 @@ namespace HuntTheWumpus
             while (player.IsAlive && wumpus.IsAlive)
             {
                 Console.Clear();
-                PrintMap(map.GetMap());
+                PrintMap(map.RenderMap());
                 ConsoleKeyInfo userInput = Console.ReadKey(true);
 
                 switch (userInput.Key)
