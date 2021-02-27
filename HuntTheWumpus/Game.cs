@@ -1,10 +1,23 @@
 ﻿using HuntTheWumpus.GameObjects;
 using System;
+using System.Collections.Generic;
 
 namespace HuntTheWumpus
 {
     public class Game
     {
+        private GameObject _gameObject;
+
+        public void Place(GameObject gameObject)
+        {
+            _gameObject = gameObject;
+        }
+
+        public GameObject Get()
+        {
+            return _gameObject;
+        }
+
         public void Start()
         {
             Map map = new Map(6);
