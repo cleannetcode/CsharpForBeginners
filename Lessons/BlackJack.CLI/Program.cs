@@ -4,83 +4,49 @@ using BlackJack.Logic;
 
 namespace BlackJack.CLI
 {
-    struct Money
-    {
-        public decimal Value { get; set; }
-
-        public override string ToString()
-        {
-            return Value.ToString();
-        }
-    }
-
-    struct Email
-    {
-
-        public string Value { get; set; }
-
-        public override string ToString()
-        {
-            return Value;
-        }
-    }
-
     class Program
     {
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-            var email = new Email();
-            var email2 = email;
-            email2.Value = "test@domain.ru";
 
-            Console.WriteLine(email);
+            Game game = new Game();
+            Player player = new Player("Player");
+            Player computer = new Player("Computer");
 
-            var money = new Money();
-            var money2 = money;
-            money.Value = 10M;
+            do
+            {
+                if (player.IsContinue)
+                {
+                    AskPlayer(player);
+                }
 
-            Console.WriteLine(money);
-            Console.WriteLine(money2);
+                if (player.IsContinue)
+                {
+                    game.GetCard(player);
+                }
 
-            //Game game = new Game();
+                if (computer.IsContinue)
+                {
+                    AskComputer(computer);
+                }
 
-            //Player player = new Player("Player");
-            //Player computer = new Player("Computer");
+                if (computer.IsContinue)
+                {
+                    game.GetCard(computer);
+                }
 
-            //do
-            //{
-            //    if (player.IsContinue)
-            //    {
-            //        AskPlayer(player);
-            //    }
+                Console.Clear();
+                Console.Write($"Player: {player.Score}");
+                Console.WriteLine();
 
-            //    if (player.IsContinue)
-            //    {
-            //        game.GetCard(player);
-            //    }
+            } while ((player.IsContinue || computer.IsContinue)
+                && player.IsTooMuch == false
+                && computer.IsTooMuch == false);
 
-            //    if (computer.IsContinue)
-            //    {
-            //        AskComputer(computer);
-            //    }
-
-            //    if (computer.IsContinue)
-            //    {
-            //        game.GetCard(computer);
-            //    }
-
-            //    Console.Clear();
-            //    Console.Write($"Player: {player.Score}");
-            //    Console.WriteLine();
-
-            //} while ((player.IsContinue || computer.IsContinue)
-            //    && player.IsTooMuch == false
-            //    && computer.IsTooMuch == false);
-
-            //Player winner = game.GetWinner(new[] { player, computer });
-            //Console.WriteLine($"Player: {player.Score}, Computer: {computer.Score}");
-            //Console.WriteLine("Победил: " + winner.Name);
+            Player winner = game.GetWinner(new[] { player, computer });
+            Console.WriteLine($"Player: {player.Score}, Computer: {computer.Score}");
+            Console.WriteLine("Победил: " + winner.Name);
         }
 
         private static void AskComputer(Player player)
