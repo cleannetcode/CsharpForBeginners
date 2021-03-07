@@ -13,7 +13,7 @@ namespace Client
         {
             var newShowcaseProduct = new ShowcaseProduct
             {
-                Price = 300,
+                Price = 500,
                 ProductId = 1,
                 ShowcaseId = 2
             };
