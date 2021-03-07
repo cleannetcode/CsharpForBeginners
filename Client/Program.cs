@@ -5,17 +5,20 @@ namespace Client
 {
     class Program
     {
+        /// <summary>
+        /// Очень хорошая программа
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             var newShowcaseProduct = new ShowcaseProduct
             {
-                Price = 100,
+                Price = 300,
                 ProductId = 1,
                 ShowcaseId = 2
             };
 
             var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Add("TEST_HEADER", "TEST VALUE");
 
             var json = JsonConvert.SerializeObject(newShowcaseProduct);
             var jsonContent = new StringContent(json);
