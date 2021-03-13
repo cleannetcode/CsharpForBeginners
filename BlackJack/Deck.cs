@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace BlackJack
 {
@@ -8,6 +9,9 @@ namespace BlackJack
 
         public Deck(int[] cards)
         {
+            if (cards == null || cards.Length == 0)
+                throw new ArgumentException(nameof(cards));
+
             _cards = new Stack<int>(cards);
         }
 
