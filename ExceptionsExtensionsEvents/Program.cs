@@ -20,7 +20,7 @@ namespace ExceptionsExtensionsEvents
                 {
                     Console.Clear();
 
-                    foreach(var subscription in user.GetSubscriptions())
+                    foreach (var subscription in user.GetSubscriptions())
                     {
                         Console.WriteLine(subscription.Title);
                     }
