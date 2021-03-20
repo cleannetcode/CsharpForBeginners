@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExceptionsExtensionsEvents
+namespace Exceptions
 {
     public class Subscription
     {

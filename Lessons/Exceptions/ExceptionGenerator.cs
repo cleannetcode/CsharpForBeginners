@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace ExceptionsExtensionsEvents
+namespace Exceptions
 {
     public class ExceptionGenerator
     {
