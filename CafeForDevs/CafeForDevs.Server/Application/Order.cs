@@ -2,7 +2,7 @@
 
 namespace CafeForDevs.Server.Application
 {
-    internal class Order
+    public class Order
     {
         private List<OrderProsition> _positions;
 

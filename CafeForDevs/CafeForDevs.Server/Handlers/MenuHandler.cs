@@ -7,6 +7,13 @@ namespace CafeForDevs.Server.Handlers
 {
     public class MenuHandler : Handler, IHandler
     {
+        private Order order;
+
+        public MenuHandler(Order order)
+        {
+            this.order = order;
+        }
+
         public string Path => "/menu";
 
         public void Handle(HttpListenerContext context)

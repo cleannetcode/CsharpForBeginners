@@ -1,4 +1,5 @@
-﻿using CafeForDevs.Server.Handlers;
+﻿using CafeForDevs.Server.Application;
+using CafeForDevs.Server.Handlers;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -15,8 +16,10 @@ namespace CafeForDevs.Server
             httpListener.Prefixes.Add(baseUrl.ToString());
 
             var handlers = new List<IHandler>();
-            handlers.Add(new MenuHandler());
-            handlers.Add(new OrderHandler());
+
+            var order = new Order();
+            handlers.Add(new MenuHandler(order));
+            handlers.Add(new OrderHandler(order));
 
 
             foreach (var handler in handlers)

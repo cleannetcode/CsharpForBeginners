@@ -9,9 +9,9 @@ namespace CafeForDevs.Server.Handlers
     {
         private Order _order;
 
-        public OrderHandler()
+        public OrderHandler(Order order)
         {
-            _order = new Order();
+            _order = order;
         }
 
         public string Path => "/order";
@@ -23,7 +23,6 @@ namespace CafeForDevs.Server.Handlers
                 case "POST":
                     var request = GetRequestBody<MenuItemRequestModel>(context);
                     SelectMenuItem(request.MenuItemId, request.Quantity);
-
                     context.Response.StatusCode = (int)HttpStatusCode.OK;
                     break;
 
@@ -31,7 +30,6 @@ namespace CafeForDevs.Server.Handlers
                     var order = GetOrder();
                     context.Response.StatusCode = (int)HttpStatusCode.OK;
                     SetResponse(order, context);
-
                     break;
             }
 
